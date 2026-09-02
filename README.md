@@ -1,4 +1,4 @@
-### Comparing the performance of some different ML classifier architectures for ECG signal diagnosis detection
+### Comparing the performance of some different ML classifier architectures for detection of diagnostic conditions from ECG signal data
 
 **Indraneel Tambe**
 
@@ -21,15 +21,17 @@ The ECG strips are labeled by human clinicians with a list of possible diagnosti
 #### Methodology
 For the analysis, I'm planning to start with a "base" model that consists of a 1D CNN-based feature extractor followed by a dense classifier head. Next, in the full capstone project, I will try piping the trained feature extractor into various non-deep ML models for classifications and see if they can outperform the original deep classifier.
 
-Here is an outline of our analysis (it follows the organization of our jupyter workbook):
+Here is an outline of our analysis (it follows the organization of our Jupyter workbook):
 
 - Part I: data cleaning, preprocessing, and preparation
 - Part II: setup and training of "base" deep model
 - Part III: experimenting with different non-deep classifiers piped after the base model's feature extractor
 
-Details regarding Parts I and II, including the choices made in preprocessing the data and in the design of the "base" model, can be seen in this project's jupyter workbook.
+Details regarding Parts I and II, including the choices made in preprocessing the data and in the design of the "base" model, can be seen in this project's Jupyter workbook.
 
 In part III I will experiment with five "classical" ML models piped after our trained feature extractor, and compare them with the original base model's performance. (This performance will be tested on a separate test set from the original validation set that was used to select the best-performing base model during training. I will also experiment with num_layers ranging from 1 to 5; here num_layers is the number of layers in the original base model's dense classifier head. (Note num_layers needs to be set before training the base model.)
+
+See Part III in the Jupyter workbook for details on which ML classifier models were used.
 
 #### Results
 
@@ -39,7 +41,7 @@ TODO . . .
 
 TODO . . . 
 
-#### Outline of project
+#### Link to Jupyter workbook
 
 TODO . . . 
 
