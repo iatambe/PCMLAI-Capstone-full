@@ -18,10 +18,10 @@ The dataset consists of over 21k strips of 12-lead ECG signals, each 10 seconds 
 (For those unfamiliar with the clinical terminology, ECG leads are essentially like channels in the signal. Each individual sample is a 16-bit integer, discretized at 1 microvolt.)
 The ECG strips are labeled by human clinicians with a list of possible diagnostic conditions.
 
-#### Methodology
+#### Methodology and outline
 For the analysis, I'm planning to start with a "base" model that consists of a 1D CNN-based feature extractor followed by a dense classifier head. Next, in the full capstone project, I will try piping the trained feature extractor into various non-deep ML models for classifications and see if they can outperform the original deep classifier.
 
-Here is an outline of our analysis (it follows the organization of our Jupyter workbook):
+Here is an outline of our analysis (the Jupyter workbook is organized in the same way):
 
 - Part I: data cleaning, preprocessing, and preparation
 - Part II: setup and training of "base" deep model
@@ -29,7 +29,7 @@ Here is an outline of our analysis (it follows the organization of our Jupyter w
 
 Details regarding Parts I and II, including the choices made in preprocessing the data and in the design of the "base" model, can be seen in this project's Jupyter workbook.
 
-In part III I will experiment with five "classical" ML models piped after our trained feature extractor, and compare them with the original base model's performance. (This performance will be tested on a separate test set from the original validation set that was used to select the best-performing base model during training. I will also experiment with num_layers ranging from 1 to 5; here num_layers is the number of layers in the original base model's dense classifier head. (Note num_layers needs to be set before training the base model.)
+In part III I experimented with five "classical" ML models piped after my trained feature extractor, and compare them with the original base model's performance. (Note: this performance will be tested on a separate test set from the original validation set that was used to select the best-performing base model during training. I will also experiment with num_layers ranging from 1 to 5; here num_layers is the number of layers in the original base model's dense classifier head. (Note num_layers needs to be set before training the base model.)
 
 See Part III in the Jupyter workbook for details on which ML classifier models were used.
 
