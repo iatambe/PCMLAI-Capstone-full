@@ -13,7 +13,7 @@ Machine learning models for diagnosing conditions from ECG signals are useful as
 Moreover, understanding what kinds of simple design choices lead to best results may help inform what choices to make when working with larger models.
 
 #### Data Sources
-I use the publicly available PTB-XL database from Physionet ([link]([https://google.com](https://physionet.org/content/ptb-xl/1.0.3/).
+I use the publicly available PTB-XL database from Physionet ([link]([https://physionet.org/content/ptb-xl/1.0.3/])).
 The dataset consists of over 21k strips of 12-lead ECG signals, each 10 seconds long (and sampled at 500Hz). 
 (For those unfamiliar with the clinical terminology, ECG leads are essentially like channels in the signal. Each individual sample is a 16-bit integer, discretized at 1 microvolt.)
 The ECG strips are labeled by human clinicians with a list of possible diagnostic conditions.
