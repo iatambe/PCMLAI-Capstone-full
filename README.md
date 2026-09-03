@@ -2,6 +2,26 @@
 
 **Indraneel Tambe**
 
+#### Problem statement
+We aim to answer the question of what kinds of design choices for simple classifier models lead to the best results in automating the task of annotating ECG signals with diagnostic conditions. Specifically, after training a deep model consisting of a feature extractor followed by a dense classifier head, we will try piping the feature extractor into various non-deep ML models and see how they compare to the original "fully deep" model.  
+
+#### Model outcomes
+This problem is a classification task, and we will use supervised learning algorithms because we will use ECG data that is already human-labeled with diagnostic conditions. We expect that a simple 1-D CNN-based model should manage to achieve a reasonable baseline performance on the data (this is Part II of the workbook), then we will experiment further by trying different classification heads on top of the pre-trained model (this is Part III).
+
+#### Data acquisition
+We use the publicly available PTB-XL database from Physionet ([link](https://physionet.org/content/ptb-xl/1.0.3/)).
+The dataset consists of over 21k strips of 12-lead ECG signals, each 10 seconds long (and sampled at 500Hz). 
+(For those unfamiliar with the clinical terminology, ECG leads are essentially like channels in the signal. Each individual sample is a 16-bit integer, discretized at 1 microvolt.)
+The ECG strips have been annotated by human clinicians from a list of possible diagnostic conditions.
+
+#### Data preprocessing
+Before feeding the signal data into the ML model, we first apply some preprocessing to the data: we apply certain signal-processing filters to the signal to smooth it out (for this we use the neurokit2 library, which has these filters pre-built), and Z-score each signal.
+The data doesn't seem to have missing values (although it does include a representation of an "unknown" confidence value for diagnoses; I've chosen to impute these as a low positive confidence). 
+The PTB-XL dataset comes with suggested stratified splittings into 10 folds, and it suggests to use folds 9 and 10 respectively as the validation and test sets; we have used this suggestion.
+
+
+------
+
 #### Executive summary
 I experiment with some different ML architectures and compare their performance in detecting diagnostic conditions ECG (electrocardiogram) signals to diagnose heart conditions based on the ECG signal morphology. Specifically, I test the performance of a family of ML architectures involving placing different classification heads on top of a basic 1D CNN-based model that I pre-train from scratch in this project.
 
