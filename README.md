@@ -37,11 +37,11 @@ See Part III in the Jupyter workbook for details on which ML classifier models w
 
 #### Results
 
-After running the full workbook with different values of num_layers multiple times, I collected the results from Part III into [this csv file](Results/Results from different classifier heads for different num_layers.csv) (included in this project).
+After running the full workbook with different values of num_layers multiple times, I collected the results from Part III into [this csv file](Results/Results%20from%20different%20classifier%20heads%20for%20different%20num_layers.csv) (included in this project).
 
 I averaged the Part III results for each choice of model and num_layers, resulting in the below graph:
 
-![](Results/part III model comparison.png)
+![](Results/part%20III%20model%20comparison.png)
 
 - Interestingly, **the best overall performance** is attained by Model B (consisting of a logistic regression head chained after our pre-trained feature extractor from Part II) with num_layers=1. In fact, with num_layers=1, Model B even outperformed the original Model A.
 - We see the performance for each of these models degrades as num_layers increases. This suggests that for our base model design, configurations with num_layers>1 tend to overfit on the training set.
