@@ -43,15 +43,15 @@ I averaged the Part III results for each choice of model and num_layers, resulti
 
 ![](Results/part%20III%20model%20comparison.png)
 
-- Interestingly, **the best overall performance** is attained by Model B (consisting of a logistic regression head chained after our pre-trained feature extractor from Part II) with num_layers=1. In fact, with num_layers=1, Model B even outperformed the original Model A.
+- It seems the **best** overall performance is attained by Model B (consisting of a logistic regression head chained after our pre-trained feature extractor from Part II) with num_layers=1. In fact, with num_layers=1, Model B even outperformed the original Model A.
 - We see the performance for each of these models degrades as num_layers increases. This suggests that for our base model design, configurations with num_layers>1 tend to overfit on the training set.
 - We only kept data for Models A,B,F as these were consistently the best-performing models.
 
 #### Next steps
 
-TODO . . . 
+A further next step could be to try tuning other hyperparameters, such as other hyperparameters of the base model (like num_layers) from Part II or hyperparameters of the various non-deep ML models that are piped after the feature extractor in Part III. Due to constraints on computation time available, in this project I only experimented with different classifier heads and with num_layers.
 
 #### Link to Jupyter workbook
 
-![](Workbook full.ipynb)
+![](Workbook%20full.ipynb)
 
