@@ -30,11 +30,9 @@ Here is an outline of our analysis (the Jupyter workbook is organized in the sam
 
 Details regarding Parts I and II, including the choices made in preprocessing the data and in the design of the "base" model, can be seen in this project's Jupyter workbook.
 
-In part III we experimented with five "classical" ML models piped after my trained feature extractor, and compare them with the original base model's performance. (Note: this performance will be tested on a separate test set from the original validation set that was used to select the best-performing base model during training, to prevent validation leakage.)
+In part III we experimented with five "classical" ML models piped after my trained feature extractor, and compare them with the original base model's performance. (Note: this performance will be tested on a separate test set from the original validation set that was used to select the best-performing base model during training, to prevent validation leakage.) See Part III in the Jupyter workbook for details on which ML classifier models were used.
 
 We also experiment with num_layers ranging from 1 to 5; here num_layers is the number of layers in the original base model's dense classifier head. (Note num_layers needs to be set before training the base model.)
-
-See Part III in the Jupyter workbook for details on which ML classifier models were used.
 
 
 #### Results
