@@ -3,7 +3,7 @@
 **Indraneel Tambe**
 
 #### Executive summary
-I experiment with some different ML models and compare their performance in detecting diagnostic conditions ECG (electrocardiogram) signals to diagnose heart conditions based on the ECG signal morphology. Specifically, I test the performance of a family of ML architectures involving placing different classification heads on top of a basic 1D CNN-based model that I pre-train from scratch in this project.
+I experiment with some different ML architectures (some simple deep- and compare their performance in detecting diagnostic conditions ECG (electrocardiogram) signals to diagnose heart conditions based on the ECG signal morphology. Specifically, I test the performance of a family of ML architectures involving placing different classification heads on top of a basic 1D CNN-based model that I pre-train from scratch in this project.
 
 #### Research Question
 We aim to answer the question of what kinds of design choices for simple classifier models lead to the best results when working with the PTB-XL dataset (specifically their diagnostic superclasses). After training a deep model consisting of a feature extractor followed by a dense classifier head, we will try piping the feature extractor into various non-deep ML models and see how they compare to the original "fully deep" model.  
@@ -29,13 +29,23 @@ Here is an outline of our analysis (the Jupyter workbook is organized in the sam
 
 Details regarding Parts I and II, including the choices made in preprocessing the data and in the design of the "base" model, can be seen in this project's Jupyter workbook.
 
-In part III I experimented with five "classical" ML models piped after my trained feature extractor, and compare them with the original base model's performance. (Note: this performance will be tested on a separate test set from the original validation set that was used to select the best-performing base model during training. I will also experiment with num_layers ranging from 1 to 5; here num_layers is the number of layers in the original base model's dense classifier head. (Note num_layers needs to be set before training the base model.)
+In part III I experimented with five "classical" ML models piped after my trained feature extractor, and compare them with the original base model's performance. (Note: this performance will be tested on a separate test set from the original validation set that was used to select the best-performing base model during training, to prevent validation leakage.)
+
+I will also experiment with num_layers ranging from 1 to 5; here num_layers is the number of layers in the original base model's dense classifier head. (Note num_layers needs to be set before training the base model.)
 
 See Part III in the Jupyter workbook for details on which ML classifier models were used.
 
 #### Results
 
-TODO . . . 
+After running the full workbook with different values of num_layers multiple times, I collected the results from Part III into [this csv file](Results/Results from different classifier heads for different num_layers.csv) (included in this project).
+
+I averaged the Part III results for each choice of model and num_layers, resulting in the below graph:
+
+![](Results/part III model comparison.png)
+
+- Interestingly, **the best overall performance** is attained by Model B (consisting of a logistic regression head chained after our pre-trained feature extractor from Part II) with num_layers=1. In fact, with num_layers=1, Model B even outperformed the original Model A.
+- We see the performance for each of these models degrades as num_layers increases. This suggests that for our base model design, configurations with num_layers>1 tend to overfit on the training set.
+- We only kept data for Models A,B,F as these were consistently the best-performing models.
 
 #### Next steps
 
@@ -43,7 +53,5 @@ TODO . . .
 
 #### Link to Jupyter workbook
 
-TODO . . . 
+![](Workbook full.ipynb)
 
-
-##### Contact and Further Information
