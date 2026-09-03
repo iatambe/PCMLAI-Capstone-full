@@ -39,9 +39,9 @@ See Part III in the Jupyter workbook for details on which ML classifier models w
 
 #### Results
 
-After running the full workbook with different values of num_layers multiple times, I collected the results from Part III into [this csv file](Results/Results%20from%20different%20classifier%20heads%20for%20different%20num_layers.csv) (included in this project).
+After running the full workbook with different values of num_layers multiple times, we collected the results from Part III into [this csv file](Results/Results%20from%20different%20classifier%20heads%20for%20different%20num_layers.csv) (included in this project).
 
-I averaged the Part III results for each choice of model and num_layers, resulting in the below graph:
+We averaged the Part III results for each choice of model and num_layers, resulting in the below graph:
 
 ![](Results/part%20III%20model%20comparison.png)
 
