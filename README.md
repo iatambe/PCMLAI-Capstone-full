@@ -53,5 +53,5 @@ A further next step could be to try tuning other hyperparameters, such as other 
 
 #### Link to Jupyter workbook
 
-![](Workbook%20full.ipynb)
+[](Workbook%20(full).ipynb)
 
